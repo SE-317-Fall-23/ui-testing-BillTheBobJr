@@ -22,12 +22,15 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://jsonplaceholder.typicode.com/users", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .then(response => {return response})
-  .catch(error => console.log('error', error))
-  .then(error => {return error});
+var response;
+await fetch("https://jsonplaceholder.typicode.com/users", requestOptions)
+  .then(response => response.json())
+  .then(data =>{response = data;})
+  .then(() => console.log(response))
+  .catch(error => console.log('error', error));
+
+
+return response;
 }
 
 export default submit;

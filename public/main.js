@@ -1,6 +1,12 @@
 import submit from './apiService.js';
 import apiService from './apiService.js';
 
+/**
+ *  List of function used as events for the html to call
+ *  These functions are used for validating input
+ *  If input invalid, will display error message
+ *  @returns {boolean} Tells us if valid or not
+ */
 const htmlModel = {
     validateFirstName: function () {
         let valid = userModel.validateFirstName(document.getElementById('firstName').value);
@@ -85,6 +91,13 @@ const htmlModel = {
     }
 }
 
+/**
+ *  List of function used to validate input of particular strings
+ *  Validation is split into two parts for ease of testing
+ *  These functions are used for validating input
+ *  @param {string} name - a string that is being validated for correct input
+ *  @returns {boolean} This tells us if valid or not
+ */
 const userModel = {
     validateFirstName: function (name) {
         const re = new RegExp("^([a-zA-Z' ]?-?){1,256}$");
@@ -101,7 +114,7 @@ const userModel = {
     validateEmail: function (email) {
         //This is not a good regex for email validation, I am meerly using it as a stand in for using a proper email regex
         //or for importing a Javascript Package/Module to handle validation for me
-        const re = new RegExp("^[a-zA-Z.#_-]+@[a-zA-Z.#_-]+\.com$");
+        const re = new RegExp("^[a-zA-Z.#_-]+@[a-zA-Z.#_-]+\\.com$");
         console.log()
         return re.test(email);
     },
@@ -128,6 +141,10 @@ const userModel = {
     }
 };
 
+/**
+ * Check all inputs to ensure everything is valid
+ * If all is valid, with all apiService.js to submit
+ */
 function htmlSubmit(){
     const valid = htmlModel.validateFirstName() && htmlModel.validateLastName() && 
                      htmlModel.validateUserName() && htmlModel.validateEmail() &&

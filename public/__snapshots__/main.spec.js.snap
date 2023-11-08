@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[` 1`] = `true`;
+
+exports[`validateCity snapshot 1`] = `true`;
+
+exports[`validateDOB snapshot 1`] = `true`;
+
+exports[`validateEmail snapshot 1`] = `true`;
+
+exports[`validateFirstName snapshot 1`] = `true`;
+
+exports[`validateFirstName snapshot 2`] = `true`;
+
+exports[`validateLastName snapshot 1`] = `true`;
+
+exports[`validateState snapshot 1`] = `true`;
+
+exports[`validateStreet snapshot 1`] = `true`;
+
+exports[`validateUserName snapshot 1`] = `true`;
+
+exports[`validateZip snapshot 1`] = `true`;
